@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/deeplpy/__init__.py
+src/deeplpy.egg-info/PKG-INFO
+src/deeplpy.egg-info/SOURCES.txt
+src/deeplpy.egg-info/dependency_links.txt
+src/deeplpy.egg-info/requires.txt
+src/deeplpy.egg-info/top_level.txt

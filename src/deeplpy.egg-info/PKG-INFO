@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: deeplpy
+Version: 0.1
+Summary: Translate source strings with deepL.
+Home-page: https://github.com/tmassman/deeplpy
+Author: Thomas Massmann
+Author-email: thomas.massmann@it-spir.it
+License: UNKNOWN
+Description: # pydeepl
+        
+        Translate source strings with [deepL](https://www.deepl.com/).
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
