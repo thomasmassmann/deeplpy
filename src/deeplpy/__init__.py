@@ -52,9 +52,10 @@ def translate(
     if result.status_code != 200:
         raise InvalidResponse
     data = result.json()
-    for item in data.get('translations', []):
-        print(item)
+    return data.get("translations", [])
 
 
 if __name__ == "__main__":
-    translate(text=["Hello, World", "How are you?"], target_lang="DE")
+    translations = translate(text=["Hello, World", "How are you?"], target_lang="DE")
+    for item in translations:
+        print(item)
