@@ -6,6 +6,18 @@ import requests
 API_ENDPOINT = os.environ.get("DEEPL_URL", "https://api.deepl.com/v2")
 
 
+class DeeplException(Exception):
+    """Generic deepl exception."""
+
+
+class MissingAuthKey(DeeplException):
+    """Auth key is missing."""
+
+
+class InvalidResponse(DeeplException):
+    """Invalid API response."""
+
+
 def translate(
     text,
     target_lang,
@@ -21,7 +33,7 @@ def translate(
     """Translate a source."""
     auth_key = auth_key or os.environ.get("DEEPL_KEY", None)
     if not auth_key:
-        return
+        raise MissingAuthKey
 
     endpoint = "/".join([API_ENDPOINT, "translate"])
     params = {
@@ -38,7 +50,7 @@ def translate(
     }
     result = requests.post(endpoint, params=params)
     if result.status_code != 200:
-        return
+        raise InvalidResponse
     data = result.json()
     for item in data.get('translations', []):
         print(item)
