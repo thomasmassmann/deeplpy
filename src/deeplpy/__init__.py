@@ -48,7 +48,7 @@ def translate(
         "splitting_tags": splitting_tags,
         "ignore_tags": ignore_tags,
     }
-    result = requests.post(endpoint, params=params)
+    result = requests.post(endpoint, data=params)
     if result.status_code != 200:
         raise InvalidResponse
     data = result.json()
